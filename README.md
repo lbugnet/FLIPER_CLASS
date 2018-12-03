@@ -32,26 +32,31 @@ The estimation of surface gravity should be made by the use of the "ML" class
 
 
 ALL NEEDED INFORMATIONS:
-"""
+```
 #Paths to PSD fits files computed from light curves filtered with 20 days
 psd_path_20             =   '/???/???'
+```
 
-#Path to trained random forest (to be dowloaded on GitHub)
+Path to trained random forest (to be dowloaded on GitHub)
+```
 PATH_TO_TRAINING_FILE   =   '/???/ML_CLASSIFICATION_Kepler_sample_training'
-#Give star parameters
-teff            =   ???
+```
 
-"""
+Give star parameters
+```
+teff            =   ???
+```
+
 Calculate FliPer values.
-"""
+```
 Fliper =   FLIPER().Fp(star_tab_psd) #data_arr_freq   =   star_tab_psd[:,0],        data_arr_pow    =   star_tab_psd[:,1]
 Fp07        =   Fliper.fp07[0]
 Fp7         =   Fliper.fp7[0]
 Fp20        =   Fliper.fp20[0]
 Fp50        =   Fliper.fp50[0]
+```
 
-"""
 Estimation of surface gravity and/or numax from the training file ('/???/ML_CLASSIFICATION_Kepler_sample_training' for instance).
-"""
+```
 class_predicted=ML().PREDICTION(Fp07, Fp7, Fp20, Fp50, teff, PATH_TO_TRAINING_FILE)
-
+```
