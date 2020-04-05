@@ -14,16 +14,12 @@ from 0.7,7,20 and 50 muHz (see Bugnet et al.,2018)
 These values are the parameters needed by the machine learning Random Forest
 (along with the effective temperature).
 
-The Random Forest classifiers are already trained and stored in the
-"ML_logg_training_paper" and "ML_numax_training_paper" files to estimate
-logg or numax. They should be download on GitHub before running this code.
-The estimation of surface gravity should be made by the use of the "ML" class
-(see CALLING SEQUENCE at the end of this code).
+The Random Forest classifiers are already trained. They should be download on GitHub before running this code.
 
 # What you need:
 
 - The power density spectrum of the star filtered with a 20 days high pass filter.
-- The effective temperature of the star (from Mathur et al., 2017 for instance)
+- The BP-RP photométric indice of the star and the luminoisty from Gaia
 - The "ML_CLASSIFICATION_TESS_SIMU_training" and "ML_CLASSIFICATION_Kepler_sample_training" files containing the training of the Random Forests,
     to be dowload on GitHub (https://github.com/lbugnet/FLIPER_CLASS)
 
@@ -44,7 +40,8 @@ PATH_TO_TRAINING_FILE   =   '/???/ML_CLASSIFICATION_Kepler_sample_training'
 
 Give star parameters
 ```
-teff            =   ???
+bp_rp            =   ???
+lum            =   ???
 ```
 
 Calculate FliPer values.
@@ -58,5 +55,5 @@ Fp50        =   Fliper.fp50[0]
 
 Estimation of surface gravity and/or numax from the training file ('/???/ML_CLASSIFICATION_Kepler_sample_training' for instance).
 ```
-class_predicted=ML().PREDICTION(Fp07, Fp7, Fp20, Fp50, teff, PATH_TO_TRAINING_FILE)
+class_predicted=ML().PREDICTION(Fp07, Fp7, Fp20, Fp50, bp_rp, lum, PATH_TO_TRAINING_FILE)
 ```
