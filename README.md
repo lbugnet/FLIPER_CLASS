@@ -4,7 +4,7 @@ author: Lisa Bugnet
 
 contact: lisa.bugnet@cea.fr
 
-This repository is the property of L. Bugnet (please see and cite Bugnet et al.,2019 in prep).
+This repository is the property of L. Bugnet (please see and cite Bugnet et al.,2019).
 
 # Description of the files
 
